@@ -61,7 +61,7 @@ public class PhotoFun extends AppCompatActivity {
             myNewImageView.setImageBitmap(filter.apply(myOriginalBmp));
         }
     }
-
+    
     /*
     * class grayFilterButtonListener this inner class defines the action for the
     * brightness filter
