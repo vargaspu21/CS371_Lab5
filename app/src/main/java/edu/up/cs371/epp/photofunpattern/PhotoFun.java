@@ -44,20 +44,20 @@ public class PhotoFun extends AppCompatActivity {
 
         Button grayFilterButton =
                 (Button) findViewById(R.id.grayFilterButton);
-        grayFilterButton.setOnClickListener(new smoothenFilterButtonListener());
-        Button smoothenFilterButton =
-                (Button) findViewById(R.id.smoothenFilterButton);
-        smoothenFilterButton.setOnClickListener
-                (new smoothenFilterButtonListener());
+        grayFilterButton.setOnClickListener(new grayFilterButtonListener());
+        Button westEdgeDetectionFilterButton =
+                (Button) findViewById(R.id.brightnessFilterButton);
+        westEdgeDetectionFilterButton.setOnClickListener
+                (new westEdgeDetectionFilterButtonListener());
     }
 
     /*
     * class grayFilterButtonListener this inner class defines the action for
     * the gray filter button.
     */
-    private class smoothenFilterButtonListener implements View.OnClickListener {
+    private class grayFilterButtonListener implements View.OnClickListener {
         public void onClick(View button) {
-            SmoothenFilter filter = new SmoothenFilter();
+            GrayFilter filter = new GrayFilter();
             myNewImageView.setImageBitmap(filter.apply(myOriginalBmp));
         }
     }
@@ -67,10 +67,10 @@ public class PhotoFun extends AppCompatActivity {
     * brightness filter
     * button.
     */
-    private class brightnessFilterButtonListener
+    private class westEdgeDetectionFilterButtonListener
             implements View.OnClickListener {
         public void onClick(View button) {
-            BrightnessFilter filter = new BrightnessFilter();
+            WestEdgeDetectionFilter filter = new WestEdgeDetectionFilter();
             myNewImageView.setImageBitmap(filter.apply(myOriginalBmp));
         }
     }
