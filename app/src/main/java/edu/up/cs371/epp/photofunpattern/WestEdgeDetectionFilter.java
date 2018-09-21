@@ -31,12 +31,12 @@ public class WestEdgeDetectionFilter extends PhotoFilter {
                 + (Color.red(sevenPixel)*-1) + (Color.red(eightPixel)*-1) + (Color.red(ninePixel)));
         int green = constrain(Color.green(onePixel) + Color.green(twoPixel) + Color.green(threePixel)
                 + (Color.green(fourPixel)*-2) + Color.green(fivePixel) + (Color.green(sixPixel)*-1)
-                + (Color.green(sevenPixel)*-1) + (Color.green(eightPixel)*-1) + (Color.green(ninePixel))));
+                + (Color.green(sevenPixel)*-1) + (Color.green(eightPixel)*-1) + (Color.green(ninePixel)));
         int blue = constrain(Color.blue(onePixel) + Color.blue(twoPixel) + Color.blue(threePixel)
                 + (Color.blue(fourPixel)*-2) + Color.blue(fivePixel) + (Color.blue(sixPixel)*-1)
-                + (Color.blue(sevenPixel)*-1) + (Color.blue(eightPixel)*-1) + (Color.blue(ninePixel))));
-        int outPixel = Color.argb(Color.alpha(fivePixel), red, green, blue);
-        return outPixel;
+                + (Color.blue(sevenPixel)*-1) + (Color.blue(eightPixel)*-1) + (Color.blue(ninePixel)));
+
+        return Color.argb(Color.alpha(fivePixel), red, green, blue);
     }
 
 }

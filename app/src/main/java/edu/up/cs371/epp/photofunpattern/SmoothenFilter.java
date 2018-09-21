@@ -24,18 +24,18 @@ public class SmoothenFilter extends PhotoFilter {
     */
     public int transformPixel(int onePixel, int twoPixel, int threePixel,int fourPixel, int fivePixel,
                               int sixPixel, int sevenPixel, int eightPixel, int ninePixel) {
-        double red = constrain(Color.red(onePixel) + (Color.red(twoPixel)*(1/10)) + (Color.red(threePixel)*(1/10))
-        + (Color.red(fourPixel)*(1/10)) + (Color.red(fivePixel)*(1/5)) + (Color.red(sixPixel)*(1/10))
-        + (Color.red(sevenPixel)*(1/10)) + (Color.red(eightPixel)*(1/10)) + Color.red(ninePixel)*(1/10));
-        int green = constrain(Color.green(onePixel) + (Color.green(twoPixel)*(1/10)) + (Color.green(threePixel)*(1/10))
-                + (Color.green(fourPixel)*(1/10)) + (Color.green(fivePixel)*(1/5)) + (Color.green(sixPixel)*(1/10))
-                + (Color.green(sevenPixel)*(1/10)) + (Color.green(eightPixel)*(1/10)) + Color.green(ninePixel)*(1/10));
-        int blue = constrain(Color.blue(onePixel) + (Color.blue(twoPixel)*(1/10)) + (Color.blue(threePixel)*(1/10))
-                + (Color.blue(fourPixel)*(1/10)) + (Color.blue(fivePixel)*(1/5)) + (Color.blue(sixPixel)*(1/10))
-                + (Color.blue(sevenPixel)*(1/10)) + (Color.blue(eightPixel)*(1/10)) + Color.blue(ninePixel)*(1/10));
-        // int intensity = (Color.red(fivePixel) + Color.green(fivePixel) +
-                //Color.blue(fivePixel)) / 3;
-        return Color.argb(Color.alpha(fivePixel), red,green,blue);
+
+        int red = constrain(((Color.red(onePixel) + Color.red(twoPixel) + Color.red(threePixel) + Color.red(fourPixel)
+                + Color.red(fivePixel) + Color.red(sixPixel) + Color.red(sevenPixel) + Color.red(eightPixel) + Color.red(ninePixel))/ 10)
+                + (Color.red(fivePixel)/5));
+        int green = constrain(((Color.green(onePixel) + Color.green(twoPixel) + Color.green(threePixel) + Color.green(fourPixel)
+                + Color.green(fivePixel) + Color.green(sixPixel) + Color.green(sevenPixel) + Color.green(eightPixel) + Color.green(ninePixel))/ 10)
+                + (Color.green(fivePixel)/5));
+        int blue = constrain(((Color.blue(onePixel) + Color.blue(twoPixel) + Color.blue(threePixel) + Color.blue(fourPixel)
+                + Color.blue(fivePixel) + Color.blue(sixPixel) + Color.blue(sevenPixel) + Color.blue(eightPixel) + Color.blue(ninePixel))/ 10)
+                + (Color.red(fivePixel)/5));
+
+        return Color.argb(Color.alpha(fivePixel), red, green, blue);
     }
 
 }
