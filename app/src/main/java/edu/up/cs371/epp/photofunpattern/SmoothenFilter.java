@@ -24,7 +24,7 @@ public class SmoothenFilter extends PhotoFilter {
     */
     public int transformPixel(int onePixel, int twoPixel, int threePixel,int fourPixel, int fivePixel,
                               int sixPixel, int sevenPixel, int eightPixel, int ninePixel) {
-        int red = constrain(Color.red(onePixel) + (Color.red(twoPixel)*(1/10)) + (Color.red(threePixel)*(1/10))
+        double red = constrain(Color.red(onePixel) + (Color.red(twoPixel)*(1/10)) + (Color.red(threePixel)*(1/10))
         + (Color.red(fourPixel)*(1/10)) + (Color.red(fivePixel)*(1/5)) + (Color.red(sixPixel)*(1/10))
         + (Color.red(sevenPixel)*(1/10)) + (Color.red(eightPixel)*(1/10)) + Color.red(ninePixel)*(1/10));
         int green = constrain(Color.green(onePixel) + (Color.green(twoPixel)*(1/10)) + (Color.green(threePixel)*(1/10))
